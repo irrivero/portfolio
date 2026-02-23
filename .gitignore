@@ -30,3 +30,7 @@ yarn-error.log*
 # OS
 .DS_Store
 Thumbs.db
+node_modules
+
+# Documentation
+SECURITY_STATUS.md

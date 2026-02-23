@@ -5,39 +5,106 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Irene Rivero Casal - Full Stack Developer. Portfolio showcasing projects, skills, and experience. Interactive terminal-based portfolio." />
+    <meta name="keywords" content="developer, portfolio, full stack, javascript, react, 42cursus" />
+    <meta name="author" content="Irene Rivero Casal" />
+    <meta property="og:title" content="Irene Rivero - Developer Portfolio" />
+    <meta property="og:description" content="Full Stack Developer portfolio with interactive projects and experience." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://irrivero.github.io/portfolio" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Irene Rivero - Developer Portfolio" />
+    <meta name="twitter:description" content="Full Stack Developer showcasing interactive projects and skills." />
+    
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <title>Irene Rivero - Developer Portfolio</title>
+    
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: 'Courier New', monospace; background: #0d0d0d; color: #00ff00; }
+      
+      #root { display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+      
+      .loader {
+        text-align: center;
+        padding: 20px;
+        animation: fadeIn 0.5s ease-in;
+      }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      
+      .spinner {
+        border: 3px solid #333;
+        border-top: 3px solid #00ff00;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+        margin: 20px auto;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      .fallback-content {
+        max-width: 800px;
+        padding: 20px;
+        border: 2px solid #00ff00;
+        border-radius: 5px;
+        background: #0d0d0d;
+      }
+      
+      .fallback-content h1 { margin-bottom: 10px; color: #00ff00; }
+      .fallback-content p { margin: 10px 0; line-height: 1.6; }
+      .fallback-content ul { margin: 10px 0 10px 20px; }
+      .fallback-content li { margin: 5px 0; }
+      .fallback-content a { color: #00ff00; text-decoration: none; }
+      .fallback-content a:hover { text-decoration: underline; }
+    </style>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <div id="root">
+      <noscript>
+        <div class="fallback-content">
+          <h1>╔═══════════════════════════════════╗</h1>
+          <h1>║  Irene's Portfolio Terminal      ║</h1>
+          <h1>╚═══════════════════════════════════╝</h1>
+          <p><strong>⚠️ JavaScript is required to view the interactive portfolio.</strong></p>
+          <p>However, here's some information:</p>
+          <ul>
+            <li><strong>Full Stack Developer</strong> | 42 Cursus Graduate</li>
+            <li>Experience in React, Node.js, and Web Development</li>
+            <li>
+              <strong>Connect:</strong>
+              <a href="https://github.com/irrivero">GitHub</a> | 
+              <a href="https://www.linkedin.com/in/irriverocas/">LinkedIn</a> | 
+              <a href="mailto:irene.rivero.casal@gmail.com">Email</a>
+            </li>
+          </ul>
+          <p>Please enable JavaScript to experience the full interactive terminal portfolio.</p>
+        </div>
+      </noscript>
+      
+      <div class="loader" style="display: none;">
+        <div class="spinner"></div>
+        <p>Loading portfolio...</p>
+      </div>
+    </div>
+    
+    <script>
+      // Show loader while React loads
+      document.addEventListener('DOMContentLoaded', function() {
+        const loader = document.querySelector('.loader');
+        if (loader) loader.style.display = 'block';
+      });
+    </script>
   </body>
 </html>
